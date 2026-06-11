@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JYMEP｜水電技師／配線師傅招募</title>
+  <meta name="description" content="JYMEP招募水電技師、半技師、學徒、機電配線與弱電施工夥伴。有機會參與大型數據中心相關工程，實務實戰、技術升級、長期發展。" />
+  <style>
+    :root {
+
+  --bg: #0d0a16;
+  --bg-2: #181325;
+
+  --primary: #b78cff;
+  --primary-light: #e0d1ff;
+  --primary-dark: #8360d8;
+
+  --text: #faf8ff;
+  --muted: #bfb3da;
+
+  --card: rgba(255,255,255,.05);
+
+  --line: rgba(224,209,255,.18);
+
+  --danger: #ffd48e;
+
+  --shadow: 0 24px 80px rgba(0,0,0,.45);
+
+  --radius: 22px;
+}
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+  margin:0;
+
+  font-family:
+  "Noto Sans TC",
+  "Microsoft JhengHei",
+  sans-serif;
+
+  color: var(--text);
+
+  background:
+
+  radial-gradient(
+    circle at 15% 10%,
+    rgba(183,140,255,.25),
+    transparent 25%
+  ),
+
+  radial-gradient(
+    circle at 80% 20%,
+    rgba(224,209,255,.15),
+    transparent 30%
+  ),
+
+  linear-gradient(
+    180deg,
+    #08060d 0%,
+    #0d0a16 45%,
+    #07050c 100%
+  );
+
+  line-height:1.65;
+}
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(4, 9, 5, .82);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: .02em;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, var(--primary), #244f12);
+      color: #071008;
+      font-size: 24px;
+      box-shadow: 0 0 28px rgba(120,211,34,.28);
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: -4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 0;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 38px rgba(120,211,34,.28);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      color: #081006;
+    }
+
+    .btn-ghost {
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: rgba(255,255,255,.04);
+    }
+
+    .hero {
+      position: relative;
+      padding: 86px 0 64px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--primary-light);
+      background: rgba(120,211,34,.08);
+      font-weight: 900;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 1.02;
+      letter-spacing: -0.06em;
+    }
+
+    h1 span {
+      color: var(--primary-light);
+      text-shadow: 0 0 30px rgba(166,255,61,.2);
+    }
+
+    .lead {
+      font-size: clamp(18px, 2.2vw, 24px);
+      color: #e5f2df;
+      margin: 0 0 28px;
+      max-width: 720px;
+      font-weight: 700;
+    }
+
+    .sublead {
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 0 34px;
+      font-size: 16px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .stat {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,.045);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--primary-light);
+      font-size: 23px;
+      line-height: 1.1;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .visual-card {
+      position: relative;
+      min-height: 520px;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(120,211,34,.16), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+    }
+
+    .visual-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(115deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.55) 60%),
+        url("https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80") center/cover;
+      opacity: .52;
+    }
+
+    .iguana {
+      position: absolute;
+      inset: 28px 28px auto;
+      padding: 28px;
+      border-radius: 26px;
+      border: 1px solid rgba(166,255,61,.28);
+      background: rgba(3,8,4,.68);
+      backdrop-filter: blur(10px);
+    }
+
+    .iguana-face {
+      width: 122px;
+      height: 122px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 64px;
+      background: radial-gradient(circle at 30% 25%, var(--primary-light), var(--primary) 42%, #14310b 75%);
+      box-shadow: 0 0 60px rgba(120,211,34,.42);
+      margin-bottom: 20px;
+    }
+
+    .iguana h2 {
+      margin: 0 0 8px;
+      font-size: 34px;
+      line-height: 1.1;
+    }
+
+    .iguana p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .badge-row {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .mini-badge {
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(3,8,4,.72);
+      border: 1px solid rgba(166,255,61,.22);
+      font-weight: 900;
+    }
+
+    .mini-badge span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 74px 0;
+      border-top: 1px solid rgba(166,255,61,.12);
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: clamp(30px, 4.2vw, 48px);
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      padding: 24px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      min-height: 190px;
+    }
+
+    .icon {
+      font-size: 34px;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 21px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025));
+      padding: 32px;
+    }
+
+    .panel ul {
+      margin: 0;
+      padding-left: 22px;
+      color: #e8f4e1;
+    }
+
+    .panel li {
+      margin: 10px 0;
+    }
+
+    .highlight {
+      background:
+        linear-gradient(135deg, rgba(120,211,34,.18), rgba(255,255,255,.04)),
+        var(--card);
+      border-color: rgba(166,255,61,.34);
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .benefit {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255,255,255,.045);
+    }
+
+    .benefit strong {
+      display: block;
+      color: var(--primary-light);
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .form-wrap {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    form {
+      background: #f7faf3;
+      color: #12200f;
+      padding: 28px;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-title {
+      margin: 0 0 4px;
+      color: #12200f;
+      font-size: 30px;
+    }
+
+    .form-note {
+      margin: 0 0 20px;
+      color: #506247;
+    }
+
+    .field {
+      margin-bottom: 14px;
+    }
+
+    label {
+      display: block;
+      font-weight: 900;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid #d4ddcd;
+      border-radius: 12px;
+      padding: 13px 14px;
+      font: inherit;
+      background: white;
+      color: #12200f;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(120,211,34,.18);
+    }
+
+    .submit {
+      width: 100%;
+      margin-top: 8px;
+      border-radius: 14px;
+      padding: 16px;
+      font-size: 17px;
+    }
+
+    .privacy {
+      font-size: 13px;
+      color: #63745b;
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    footer {
+      padding: 34px 0;
+      color: var(--muted);
+      border-top: 1px solid rgba(166,255,61,.12);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      z-index: 40;
+      box-shadow: 0 16px 48px rgba(0,0,0,.45);
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hero { padding-top: 54px; }
+      .hero-grid,
+      .split,
+      .form-wrap {
+        grid-template-columns: 1fr;
+      }
+      .visual-card { min-height: 430px; }
+      .cards,
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .benefits {
+        grid-template-columns: 1fr;
+      }
+      .sticky-cta {
+        display: inline-flex;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+      .brand strong {
+        font-size: 16px;
+      }
+      .hero-actions {
+        flex-direction: column;
+      }
+      .btn {
+        width: 100%;
+      }
+      .cards,
+      .stats,
+      .badge-row {
+        grid-template-columns: 1fr;
+      }
+      .visual-card {
+        min-height: 560px;
+      }
+      .iguana {
+        inset: 18px 18px auto;
+        padding: 22px;
+      }
+      form {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="回到首頁">
+        <div class="brand-mark">⚡</div>
+        <div>
+          <strong>皆洋機電｜JYMEP</strong>
+          <small>JYMEP · PROFESSIONAL ELECTRICAL</small>
+        </div>
+      </a>
+      <div class="nav-links" aria-label="主選單">
+        <a href="#work">工作內容</a>
+        <a href="#benefits">休假福利</a>
+        <a href="#target">招募對象</a>
+        <a href="#apply">立即登錄</a>
+      </div>
+      <a class="btn btn-primary" href="#apply">立即登錄 ⚡</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">有機會參與國際級大型數據中心相關工程</div>
+          <h1>皆洋機電<br><span>JYMEP</span></h1>
+          <p class="lead">水電技師／配線師傅招募中。實務實戰強，做中學、學中做，跟對工班，前途似錦。</p>
+          <p class="sublead">
+            我們正在找願意上現場、重品質、守安全、能與團隊配合的水電夥伴。
+            這不只是一般水電工作，而是走向智慧建築、機電整合、數據中心與高規格工程的機會。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#apply">我要留下資料</a>
+            <a class="btn btn-ghost" href="#work">先看工作內容</a>
+          </div>
+          <div class="stats" aria-label="團隊亮點">
+            <div class="stat"><strong>實戰</strong><span>現場導向訓練</span></div>
+            <div class="stat"><strong>專業</strong><span>品質安全紀律</span></div>
+            <div class="stat"><strong>升級</strong><span>大型案場經驗</span></div>
+            <div class="stat"><strong>長期</strong><span>穩定合作發展</span></div>
+          </div>
+        </div>
+
+        <div class="visual-card" aria-label="JYMEP主視覺">
+          <div class="iguana">
+            <div class="iguana-face">⚡</div>
+            <h2>有活力，也有紀律</h2>
+            <p>像我們一樣敏捷、穩定、敢衝現場。用專業態度，把每一次施工做到位。</p>
+          </div>
+          <div class="badge-row">
+            <div class="mini-badge">實務實戰強<span>現場能力才是真本事</span></div>
+            <div class="mini-badge">技術升級<span>走向高規格工程</span></div>
+            <div class="mini-badge">團隊作戰<span>聽指揮、重配合</span></div>
+            <div class="mini-badge">安全第一<span>品質與安全不妥協</span></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-head">
+          <h2>做水電，也可以做到頂尖工程</h2>
+          <p>未來的水電技術，會連結到智慧建築、數據中心、能源管理、自動控制與大型機電工程。</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon">🔌</div>
+            <h3>機電配線</h3>
+            <p>依工程規範進行配線、拉線、端接與現場施工協作。</p>
+          </article>
+          <article class="card">
+            <div class="icon">🧰</div>
+            <h3>管線配置</h3>
+            <p>配管、線槽、現場整理與配合工頭每日任務安排。</p>
+          </article>
+          <article class="card">
+            <div class="icon">🖥️</div>
+            <h3>弱電網路</h3>
+            <p>弱電、網路線、控制線施工，累積機房與高規格案場經驗。</p>
+          </article>
+          <article class="card">
+            <div class="icon">🏗️</div>
+            <h3>大型案場</h3>
+            <p>有機會接觸數據中心、科技廠、機房等大型工程環境。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits">
+      <div class="container">
+        <div class="section-head">
+          <h2>休假與福利，讓你安心打拼</h2>
+          <p>依工程案場與實際班表協調，重視效率，也重視夥伴休息與安全。</p>
+        </div>
+        <div class="benefits">
+          <div class="benefit">
+            <strong>彈性休假制度</strong>
+            依案場工期與班表安排，可討論固定休假或輪休方式。
+          </div>
+          <div class="benefit">
+            <strong>穩定工程機會</strong>
+            表現良好者可長期配合，累積穩定案場與實作經驗。
+          </div>
+          <div class="benefit">
+            <strong>技術與收入升級</strong>
+            技術能力提升後，收入與職涯發展空間更大。
+          </div>
+          <div class="benefit">
+            <strong>師傅帶領</strong>
+            透過現場實務學習，讓半技師與學徒逐步養成戰力。
+          </div>
+          <div class="benefit">
+            <strong>安全品質文化</strong>
+            配合工地安全規範，重視防護、紀律與施工品質。
+          </div>
+          <div class="benefit">
+            <strong>大型案場履歷</strong>
+            有機會累積高規格工程經驗，強化未來市場競爭力。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="target">
+      <div class="container split">
+        <div class="panel highlight">
+          <h2>我們正在找這樣的你</h2>
+          <ul>
+            <li>具水電、配線、配管、拉線、端接經驗者佳。</li>
+            <li>水電技師、半技師、學徒皆可登錄。</li>
+            <li>機電配線、弱電、網路線、控制線施工人員歡迎。</li>
+            <li>能配合工地規範與團隊指揮。</li>
+            <li>態度積極、守時負責、願意長期發展。</li>
+            <li>有大型案場、科技廠、機房、數據中心經驗者優先。</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>加入JYMEP的價值</h2>
+          <p>
+            水電不只是拉線配管，而是未來智慧城市、數據中心、能源管理與自動控制的核心技術。
+            加入JYMEP，讓你的現場能力、工程履歷與技術價值一起升級。
+          </p>
+          <p style="font-size: 26px; font-weight: 900; color: var(--primary-light); margin-bottom: 0;">
+            一技在身，天下可行；<br>跟對工班，前途似錦。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="apply">
+      <div class="container form-wrap">
+        <div class="section-head">
+          <div class="eyebrow">立即登錄，等待工頭聯繫</div>
+          <h2>留下資料，加入JYMEP</h2>
+          <p>
+            請填寫基本資料、經驗與可上工時間。工頭會依照你的地區、技能與合作方式安排後續聯繫。
+          </p>
+          <p style="color: var(--danger); font-weight: 900;">
+            提醒：本頁表單目前為前端示範版，正式上線時可接 Google 表單、Google Sheet、LINE OA 或後台資料庫。
+          </p>
+        </div>
+
+        <form action="#" method="post">
+          <h2 class="form-title">招募登錄表</h2>
+          <p class="form-note">欄位可依工頭實際需求再簡化。</p>
+
+          <div class="field">
+            <label for="name">姓名 *</label>
+            <input id="name" name="name" type="text" placeholder="請輸入您的姓名" required />
+          </div>
+
+          <div class="field">
+            <label for="phone">手機號碼 *</label>
+            <input id="phone" name="phone" type="tel" placeholder="請輸入您的手機號碼" required />
+          </div>
+
+          <div class="field">
+            <label for="line">LINE ID</label>
+            <input id="line" name="line" type="text" placeholder="請輸入您的 LINE ID" />
+          </div>
+
+          <div class="field">
+            <label for="area">居住地區 *</label>
+            <select id="area" name="area" required>
+              <option value="">請選擇地區</option>
+              <option>桃園</option>
+              <option>新竹</option>
+              <option>苗栗</option>
+              <option>台北／新北</option>
+              <option>其他地區</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="role">目前身份 *</label>
+            <select id="role" name="role" required>
+              <option value="">請選擇身份</option>
+              <option>水電技師</option>
+              <option>半技師</option>
+              <option>學徒</option>
+              <option>機電配線師傅</option>
+              <option>弱電／網路線施工人員</option>
+              <option>其他</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="experience">水電相關年資</label>
+            <select id="experience" name="experience">
+              <option value="">請選擇年資</option>
+              <option>無經驗，但願意學習</option>
+              <option>未滿 1 年</option>
+              <option>1–3 年</option>
+              <option>3–5 年</option>
+              <option>5 年以上</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="start">可上工時間 *</label>
+            <select id="start" name="start" required>
+              <option value="">請選擇可上工時間</option>
+              <option>立即可上工</option>
+              <option>一週內</option>
+              <option>兩週內</option>
+              <option>一個月內</option>
+              <option>需再討論</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="pay">期待待遇</label>
+            <input id="pay" name="pay" type="text" placeholder="例如：日薪／月薪／可面議" />
+          </div>
+
+          <div class="field">
+            <label for="message">簡單自我介紹／過去經驗</label>
+            <textarea id="message" name="message" placeholder="請簡單說明做過哪些工程、會哪些技術、是否有相關證照"></textarea>
+          </div>
+
+          <button class="btn btn-primary submit" type="submit">送出資料，等待工頭聯繫 ➜</button>
+          <p class="privacy">送出即表示同意將資料作為招募聯繫用途。</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <a class="btn btn-primary sticky-cta" href="#apply">立即登錄，加入JYMEP ⚡</a>
+
+  <footer>
+    <div class="container">
+      JYMEP｜水電技師／配線師傅招募頁 © 2026
+    </div>
+  </footer>
+</body>
+</html>
+
